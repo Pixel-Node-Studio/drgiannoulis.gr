@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ioannis K. Giannoulis - Academic Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1a365d',
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #1a365d;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-navy">Dr. I.K. Giannoulis</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-navy transition">About</a>
+                    <a href="#education" class="text-gray-700 hover:text-navy transition">Education</a>
+                    <a href="#publications" class="text-gray-700 hover:text-navy transition">Publications</a>
+                    <a href="#research" class="text-gray-700 hover:text-navy transition">Research</a>
+                    <a href="#contact" class="text-gray-700 hover:text-navy transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-gradient-to-r from-navy to-blue-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Dr. Ioannis K. Giannoulis</h1>
+            <h2 class="text-xl md:text-2xl mb-8">Lecturer in Accounting & Finance<br>Hellenic Mediterranean University</h2>
+            <div class="flex justify-center space-x-6">
+                <a href="https://scholar.google.com" class="hover:text-blue-200 transition" aria-label="Google Scholar">
+                    <i data-feather="book" class="w-6 h-6"></i>
+                </a>
+                <a href="https://orcid.org" class="hover:text-blue-200 transition" aria-label="ORCID">
+                    <i data-feather="user" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.researchgate.net" class="hover:text-blue-200 transition" aria-label="ResearchGate">
+                    <i data-feather="bar-chart-2" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <div class="mt-10">
+                <a href="#" class="bg-white text-navy px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition inline-block">Download CV</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center" data-aos="fade-up">
+                <div class="md:w-1/3 mb-8 md:mb-0 md:pr-10">
+                    <img src="http://static.photos/office/640x360/42" alt="Dr. Ioannis Giannoulis" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-navy mb-6">About</h2>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Dr. Ioannis K. Giannoulis is a Lecturer in Accounting and Finance at the Hellenic Mediterranean University with extensive experience in corporate governance, financial markets, and accounting education. His research focuses on the intersection of business law and finance, particularly in emerging markets.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        With degrees from Lancaster University, Athens University of Economics and Business, and Frederick University, Dr. Giannoulis brings an international perspective to both his research and teaching practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Academic Journey</h2>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-8">
+                    <!-- PhD -->
+                    <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+                            <h3 class="text-xl font-bold text-navy mb-2">Ph.D. in Business Law</h3>
+                            <p class="text-gray-600 mb-2">Frederick University (2023)</p>
+                            <p class="text-gray-700">Dissertation: "Corporate Governance in Emerging Markets: A Legal and Financial Perspective"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- MA -->
+                    <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+                            <h3 class="text-xl font-bold text-navy mb-2">M.A. in Accounting and Finance</h3>
+                            <p class="text-gray-600 mb-2">Lancaster University, UK (1997)</p>
+                            <p class="text-gray-700">Specialization in Financial Market Regulation</p>
+                        </div>
+                    </div>
+                    
+                    <!-- BA -->
+                    <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+                            <h3 class="text-xl font-bold text-navy mb-2">B.A. in Economics</h3>
+                            <p class="text-gray-600 mb-2">Athens University of Economics and Business (1995)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Erasmus -->
+                    <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+                            <h3 class="text-xl font-bold text-navy mb-2">Erasmus Diploma in Economics</h3>
+                            <p class="text-gray-600 mb-2">Universiteit van Amsterdam (1994)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Selected Publications</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Publication 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-navy mb-2">Corporate Governance and IPO Performance</h3>
+                    <p class="text-sm text-gray-600 mb-3">Accounting Forum, Vol. 45, No. 2 (2022)</p>
+                    <p class="text-gray-700 mb-4">Examined the relationship between corporate governance structures and post-IPO performance in Mediterranean markets.</p>
+                    <a href="#" class="text-blue-600 hover:underline flex items-center">
+                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
+                        View DOI
+                    </a>
+                </div>
+                
+                <!-- Publication 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-navy mb-2">Financial Regulation in Small Economies</h3>
+                    <p class="text-sm text-gray-600 mb-3">Accounting and Finance Research, Vol. 11, No. 3 (2021)</p>
+                    <p class="text-gray-700 mb-4">Comparative analysis of financial regulation frameworks and their impact on economic growth in small European economies.</p>
+                    <a href="#" class="text-blue-600 hover:underline flex items-center">
+                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
+                        View DOI
+                    </a>
+                </div>
+                
+                <!-- Publication 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-navy mb-2">Audit Committee Effectiveness</h3>
+                    <p class="text-sm text-gray-600 mb-3">Journal of Corporate Governance, Vol. 18, No. 4 (2020)</p>
+                    <p class="text-gray-700 mb-4">Empirical study on the factors influencing audit committee effectiveness in publicly traded companies.</p>
+                    <a href="#" class="text-blue-600 hover:underline flex items-center">
+                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
+                        View DOI
+                    </a>
+                </div>
+                
+                <!-- Publication 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-navy mb-2">IFRS Implementation Challenges</h3>
+                    <p class="text-sm text-gray-600 mb-3">International Journal of Accounting, Vol. 55, No. 1 (2019)</p>
+                    <p class="text-gray-700 mb-4">Analysis of implementation challenges for IFRS in non-EU Mediterranean countries.</p>
+                    <a href="#" class="text-blue-600 hover:underline flex items-center">
+                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
+                        View DOI
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="border border-navy text-navy px-6 py-3 rounded-md font-medium hover:bg-navy hover:text-white transition inline-block" data-aos="fade-up">
+                    View All Publications
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex">
+                <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-navy mb-6">Research Interests</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Corporate Governance Structures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Initial Public Offerings (IPOs)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Financial Market Regulation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Accounting Standards Implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+                            <span>Emerging Market Economies</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-navy mb-6">Recent Conferences</h2>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-lg text-navy">European Accounting Association Annual Congress</h3>
+                            <p class="text-gray-600 text-sm mb-2">Oslo, Norway | May 2023</p>
+                            <p>Presented research on "Board Diversity and Firm Performance in Southern Europe"</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-lg text-navy">Mediterranean Finance Conference</h3>
+                            <p class="text-gray-600 text-sm mb-2">Valletta, Malta | October 2022</p>
+                            <p>Keynote speaker on "Regulatory Challenges in Post-Pandemic Financial Markets"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Contact</h2>
+            
+            <div class="md:flex justify-center space-y-8 md:space-y-0 md:space-x-16">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="mail" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <a href="mailto:i.giannoulis@hmu.gr" class="hover:text-blue-200 transition">i.giannoulis@hmu.gr</a>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Institution</h3>
+                    <p>Hellenic Mediterranean University</p>
+                    <p>Department of Accounting & Finance</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="link" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Academic Profiles</h3>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="Google Scholar">
+                            <i data-feather="book" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="ORCID">
+                            <i data-feather="user" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="hover:text-blue-200 transition" aria-label="ResearchGate">
+                            <i data-feather="bar-chart-2" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-lg font-bold">Dr. Ioannis K. Giannoulis</p>
+                    <p class="text-gray-400">Lecturer in Accounting & Finance</p>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    <p>&copy; 2023 Academic Portfolio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
