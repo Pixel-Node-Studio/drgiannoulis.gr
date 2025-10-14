@@ -41,288 +41,569 @@
             background: #1a365d;
         }
     </style>
+    <style>
+        .active-link {
+          color: #1a365d !important; /* navy */
+          border-bottom: 2px solid #1a365d;
+          font-weight: 600;
+        }
+      </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-navy">Dr. I.K. Giannoulis</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-navy transition">About</a>
-                    <a href="#education" class="text-gray-700 hover:text-navy transition">Education</a>
-                    <a href="#publications" class="text-gray-700 hover:text-navy transition">Publications</a>
-                    <a href="#research" class="text-gray-700 hover:text-navy transition">Research</a>
-                    <a href="#contact" class="text-gray-700 hover:text-navy transition">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-700 focus:outline-none">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-32 pb-20 bg-gradient-to-r from-navy to-blue-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Dr. Ioannis K. Giannoulis</h1>
-            <h2 class="text-xl md:text-2xl mb-8">Lecturer in Accounting & Finance<br>Hellenic Mediterranean University</h2>
-            <div class="flex justify-center space-x-6">
-                <a href="https://scholar.google.com" class="hover:text-blue-200 transition" aria-label="Google Scholar">
-                    <i data-feather="book" class="w-6 h-6"></i>
+
+  <!-- Navigation -->
+<nav class="bg-white shadow-sm fixed w-full z-10">
+    <div class="flex justify-between items-center h-16 px-6 lg:px-12 max-w-full">
+      
+      <!-- Left side: Name -->
+      <a href="#" class="text-xl font-bold text-navy whitespace-nowrap">
+        Dr. I. Giannoulis
+      </a>
+  
+      <!-- Right side: Menu links -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-700 hover:text-navy transition">About</a>
+        <a href="#education" class="text-gray-700 hover:text-navy transition">Education</a>
+        <a href="#teaching" class="text-gray-700 hover:text-navy transition">Undergraduate Teaching</a>
+        <a href="#teaching-postgraduate" class="text-gray-700 hover:text-navy transition">Postgraduate Teaching</a>
+        <a href="#administrative-work" class="text-gray-700 hover:text-navy transition">Administrative Work</a>
+        <a href="#research" class="text-gray-700 hover:text-navy transition">Research</a>
+        <a href="#contact" class="text-gray-700 hover:text-navy transition">Contact</a>
+      </div>
+  
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+
+
+<!-- Hero Section -->
+<header class="pt-20 pb-8 bg-gradient-to-b from-navy via-blue-900 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
+      <!-- Όνομα -->
+      <h1 class="text-2xl md:text-3xl font-bold mb-5 tracking-wide">
+        Dr. Ioannis Giannoulis
+      </h1>
+  
+      <!-- Θέση & Πανεπιστήμιο -->
+      <p class="text-base md:text-lg text-blue-100 leading-relaxed mb-6">
+        Lecturer in Accounting & Finance at 
+        <a href="https://www.hmu.gr/" target="_blank" class="text-blue-300 hover:underline">
+          Hellenic Mediterranean University
+        </a><br>
+        <span class="text-blue-200">Department of Accounting & Finance</span>
+      </p>
+  
+      <!-- Κουμπί -->
+      <a href="https://mail.google.com/mail/u/2?ui=2&ik=0ee89eb4e4&attid=0.1&permmsgid=msg-f:1845590247367315253&th=199cda8d37410f35&view=att&zw&disp=safe"
+         class="inline-block bg-white text-navy px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition">
+         Download CV
+      </a>
+    </div>
+  </header>
+
+
+
+
+   <!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-navy mb-8 text-center">About</h2>
+  
+      <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+        <p>
+          <span class="font-semibold text-navy">Dr. Ioannis Giannoulis</span> serves as a 
+          <span class="font-semibold">Lecturer in Accounting and Finance</span> at the 
+          <a href="https://www.hmu.gr/" target="_blank" class="text-blue-600 hover:underline">
+            Hellenic Mediterranean University (HMU)
+          </a>, Department of Accounting and Finance.
+        </p>
+  
+        <p>
+          He teaches core undergraduate and postgraduate courses in areas such as 
+          <span class="font-semibold">Financial Accounting</span>, 
+          <span class="font-semibold">Taxation</span>, and 
+          <span class="font-semibold">Auditing</span>, combining long academic experience with practical understanding of the Greek financial environment.
+        </p>
+  
+        <p>
+          Over the years, Dr. Giannoulis has contributed to the university community through active roles in 
+          <span class="font-semibold">academic coordination</span>, 
+          <span class="font-semibold">internship supervision</span>, and participation in 
+          <span class="font-semibold">institutional committees</span>. 
+          His approach focuses on bridging academic knowledge with real-world business and accounting practice.
+        </p>
+  
+        <p>
+          He holds degrees from 
+          <span class="font-semibold">Lancaster University (UK)</span>, 
+          <span class="font-semibold">Athens University of Economics and Business</span>, and 
+          <span class="font-semibold">Frederick University (Cyprus)</span>.
+        </p>
+      </div>
+  
+      <div class="mt-10 grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up">
+          <i data-feather="book-open" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
+          <h3 class="font-semibold text-navy mb-1">Teaching Focus</h3>
+          <p class="text-sm text-gray-600">Accounting, Taxation & Auditing courses at undergraduate and postgraduate level.</p>
+        </div>
+  
+        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+          <i data-feather="briefcase" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
+          <h3 class="font-semibold text-navy mb-1">Administrative Roles</h3>
+          <p class="text-sm text-gray-600">Internship coordinator and member of evaluation and academic service committees.</p>
+        </div>
+  
+        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+          <i data-feather="award" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
+          <h3 class="font-semibold text-navy mb-1">Academic Background</h3>
+          <p class="text-sm text-gray-600">Ph.D. in Business Law — Frederick University, M.A. in Accounting & Finance — Lancaster University.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+   <!-- Education Section -->
+<section id="education" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Academic Journey</h2>
+  
+      <div class="relative">
+        <!-- Timeline -->
+        <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
+  
+        <div class="space-y-8">
+  
+          <!-- PhD -->
+          <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Ph.D. in Business Law</h3>
+              <p class="text-gray-600 mb-2">
+                Frederick University, School of Legal and Business Studies — Cyprus (2016–2023)
+              </p>
+              <p class="text-gray-700 mb-2">
+                Doctoral Thesis: “Delisting of Companies Listed on the Athens Stock Exchange” (Grade: Excellent)
+              </p>
+              <p class="text-gray-700 text-sm mb-2">
+                <a href="https://www.frederick.ac.cy/en/business-law" target="_blank" class="text-blue-600 hover:underline">
+                  frederick.ac.cy/en/business-law
                 </a>
-                <a href="https://orcid.org" class="hover:text-blue-200 transition" aria-label="ORCID">
-                    <i data-feather="user" class="w-6 h-6"></i>
+              </p>
+              <p class="text-gray-700 text-sm">
+                DOI Thesis Link:
+                <a href="https://www.didaktorika.gr/eadd/handle/10442/54610" target="_blank" class="text-blue-600 hover:underline">
+                  didaktorika.gr/eadd/handle/10442/54610
                 </a>
-                <a href="https://www.researchgate.net" class="hover:text-blue-200 transition" aria-label="ResearchGate">
-                    <i data-feather="bar-chart-2" class="w-6 h-6"></i>
+              </p>
+              <p class="text-gray-600 text-sm mt-2">Recognition by DOATAP: Act No. H48Δ6/XX.XX.2023</p>
+            </div>
+          </div>
+  
+          <!-- Master's -->
+          <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">M.A. in Accounting and Finance</h3>
+              <p class="text-gray-600 mb-2">
+                Lancaster University, Management School — United Kingdom (1996–1997)
+              </p>
+              <p class="text-gray-700 mb-2">
+                Master's Dissertation: “The Effect of Published Financial Statements on Stock Prices:  
+                An Empirical Analysis of the Retail and Machinery Sectors”
+              </p>
+              <p class="text-gray-700 text-sm mb-2">
+                <a href="https://www.lancaster.ac.uk/lums/" target="_blank" class="text-blue-600 hover:underline">
+                  lancaster.ac.uk/lums
                 </a>
+              </p>
+              <p class="text-gray-600 text-sm">Recognized by DI.K.A.T.S.A.: Act No. 7-2253/20.11.2000</p>
             </div>
-            <div class="mt-10">
-                <a href="#" class="bg-white text-navy px-6 py-3 rounded-md font-medium hover:bg-blue-50 transition inline-block">Download CV</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex items-center" data-aos="fade-up">
-                <div class="md:w-1/3 mb-8 md:mb-0 md:pr-10">
-                    <img src="http://static.photos/office/640x360/42" alt="Dr. Ioannis Giannoulis" class="rounded-lg shadow-lg w-full">
-                </div>
-                <div class="md:w-2/3">
-                    <h2 class="text-3xl font-bold text-navy mb-6">About</h2>
-                    <p class="text-lg leading-relaxed mb-6">
-                        Dr. Ioannis K. Giannoulis is a Lecturer in Accounting and Finance at the Hellenic Mediterranean University with extensive experience in corporate governance, financial markets, and accounting education. His research focuses on the intersection of business law and finance, particularly in emerging markets.
-                    </p>
-                    <p class="text-lg leading-relaxed">
-                        With degrees from Lancaster University, Athens University of Economics and Business, and Frederick University, Dr. Giannoulis brings an international perspective to both his research and teaching practices.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Academic Journey</h2>
-            
-            <div class="relative">
-                <!-- Timeline -->
-                <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
-                
-                <!-- Timeline Items -->
-                <div class="space-y-8">
-                    <!-- PhD -->
-                    <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
-                            <h3 class="text-xl font-bold text-navy mb-2">Ph.D. in Business Law</h3>
-                            <p class="text-gray-600 mb-2">Frederick University (2023)</p>
-                            <p class="text-gray-700">Dissertation: "Corporate Governance in Emerging Markets: A Legal and Financial Perspective"</p>
-                        </div>
-                    </div>
-                    
-                    <!-- MA -->
-                    <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
-                            <h3 class="text-xl font-bold text-navy mb-2">M.A. in Accounting and Finance</h3>
-                            <p class="text-gray-600 mb-2">Lancaster University, UK (1997)</p>
-                            <p class="text-gray-700">Specialization in Financial Market Regulation</p>
-                        </div>
-                    </div>
-                    
-                    <!-- BA -->
-                    <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
-                            <h3 class="text-xl font-bold text-navy mb-2">B.A. in Economics</h3>
-                            <p class="text-gray-600 mb-2">Athens University of Economics and Business (1995)</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Erasmus -->
-                    <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-                        <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
-                            <h3 class="text-xl font-bold text-navy mb-2">Erasmus Diploma in Economics</h3>
-                            <p class="text-gray-600 mb-2">Universiteit van Amsterdam (1994)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Selected Publications</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Publication 1 -->
-                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up">
-                    <h3 class="text-xl font-bold text-navy mb-2">Corporate Governance and IPO Performance</h3>
-                    <p class="text-sm text-gray-600 mb-3">Accounting Forum, Vol. 45, No. 2 (2022)</p>
-                    <p class="text-gray-700 mb-4">Examined the relationship between corporate governance structures and post-IPO performance in Mediterranean markets.</p>
-                    <a href="#" class="text-blue-600 hover:underline flex items-center">
-                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
-                        View DOI
-                    </a>
-                </div>
-                
-                <!-- Publication 2 -->
-                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-navy mb-2">Financial Regulation in Small Economies</h3>
-                    <p class="text-sm text-gray-600 mb-3">Accounting and Finance Research, Vol. 11, No. 3 (2021)</p>
-                    <p class="text-gray-700 mb-4">Comparative analysis of financial regulation frameworks and their impact on economic growth in small European economies.</p>
-                    <a href="#" class="text-blue-600 hover:underline flex items-center">
-                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
-                        View DOI
-                    </a>
-                </div>
-                
-                <!-- Publication 3 -->
-                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-navy mb-2">Audit Committee Effectiveness</h3>
-                    <p class="text-sm text-gray-600 mb-3">Journal of Corporate Governance, Vol. 18, No. 4 (2020)</p>
-                    <p class="text-gray-700 mb-4">Empirical study on the factors influencing audit committee effectiveness in publicly traded companies.</p>
-                    <a href="#" class="text-blue-600 hover:underline flex items-center">
-                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
-                        View DOI
-                    </a>
-                </div>
-                
-                <!-- Publication 4 -->
-                <div class="bg-gray-50 p-6 rounded-lg publication-item transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-bold text-navy mb-2">IFRS Implementation Challenges</h3>
-                    <p class="text-sm text-gray-600 mb-3">International Journal of Accounting, Vol. 55, No. 1 (2019)</p>
-                    <p class="text-gray-700 mb-4">Analysis of implementation challenges for IFRS in non-EU Mediterranean countries.</p>
-                    <a href="#" class="text-blue-600 hover:underline flex items-center">
-                        <i data-feather="external-link" class="w-4 h-4 mr-1"></i>
-                        View DOI
-                    </a>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="border border-navy text-navy px-6 py-3 rounded-md font-medium hover:bg-navy hover:text-white transition inline-block" data-aos="fade-up">
-                    View All Publications
+          </div>
+  
+          <!-- Bachelor -->
+          <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">B.A. in Economics</h3>
+              <p class="text-gray-600 mb-2">
+                Athens University of Economics and Business (AUEB) — Greece (1990–1995)
+              </p>
+              <p class="text-gray-700 text-sm mb-2">
+                <a href="https://www.dept.aueb.gr/el/econ" target="_blank" class="text-blue-600 hover:underline">
+                  dept.aueb.gr/el/econ
                 </a>
+              </p>
+              <p class="text-gray-700 text-sm">Grade: 8 1/32 (Excellent)</p>
             </div>
+          </div>
+  
+          <!-- Erasmus -->
+          <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">
+                Diploma in Investment and Portfolio Theory (Erasmus)
+              </h3>
+              <p class="text-gray-600 mb-2">
+                Universiteit van Amsterdam (UvA) — Netherlands (1993–1994)
+              </p>
+            </div>
+          </div>
+  
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Research Interests -->
-    <section id="research" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex">
-                <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0" data-aos="fade-right">
-                    <h2 class="text-3xl font-bold text-navy mb-6">Research Interests</h2>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
-                            <span>Corporate Governance Structures</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
-                            <span>Initial Public Offerings (IPOs)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
-                            <span>Financial Market Regulation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
-                            <span>Accounting Standards Implementation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
-                            <span>Emerging Market Economies</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <h2 class="text-3xl font-bold text-navy mb-6">Recent Conferences</h2>
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-lg shadow-sm">
-                            <h3 class="font-bold text-lg text-navy">European Accounting Association Annual Congress</h3>
-                            <p class="text-gray-600 text-sm mb-2">Oslo, Norway | May 2023</p>
-                            <p>Presented research on "Board Diversity and Firm Performance in Southern Europe"</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-sm">
-                            <h3 class="font-bold text-lg text-navy">Mediterranean Finance Conference</h3>
-                            <p class="text-gray-600 text-sm mb-2">Valletta, Malta | October 2022</p>
-                            <p>Keynote speaker on "Regulatory Challenges in Post-Pandemic Financial Markets"</p>
-                        </div>
-                    </div>
-                </div>
+    
+<!-- Undergraduate Teaching Section -->
+<section id="teaching" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Undergraduate Teaching Experience</h2>
+  
+      <div class="relative">
+        <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
+        <div class="space-y-8">
+  
+          <!-- Lecturer -->
+          <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Lecturer</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Hellenic Mediterranean University (HMU)</strong><br>
+                School of Management and Economics — Department of Accounting & Finance<br>
+                Specialization: “Accounting – Accounting Applications”<br>
+                <a href="https://accfin.hmu.gr/" target="_blank" class="text-blue-600 hover:underline">accfin.hmu.gr</a>
+              </p>
+              <p class="text-sm text-gray-600">June 2023 – Present</p>
             </div>
+          </div>
+  
+          <!-- Lecturer of Applications -->
+          <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Lecturer of Applications</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Hellenic Mediterranean University (HMU)</strong><br>
+                School of Management and Economics — Department of Accounting & Finance
+              </p>
+              <p class="text-sm text-gray-600">September 2019 – May 2023</p>
+            </div>
+          </div>
+  
+          <!-- Professor of Applications (TEI Crete 2013–2019) -->
+          <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Professor of Applications</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Technological Educational Institute (TEI) of Crete</strong><br>
+                School of Management and Economics — Department of Accounting & Finance<br>
+                Specialization: “Accounting – Accounting Applications”
+              </p>
+              <p class="text-sm text-gray-600">September 2013 – September 2019</p>
+            </div>
+          </div>
+  
+          <!-- Professor of Applications (TEI Crete 2005–2013) -->
+          <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Professor of Applications</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Technological Educational Institute (TEI) of Crete</strong><br>
+                School of Management and Economics — Department of Accounting<br>
+                Specialization: “Accounting – Accounting Applications”
+              </p>
+              <p class="text-sm text-gray-600">January 2005 – September 2013</p>
+            </div>
+          </div>
+  
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Postgraduate Teaching Section -->
+  <section id="teaching-postgraduate" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Postgraduate Teaching Experience</h2>
+  
+      <div class="relative">
+        <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
+        <div class="space-y-8">
+  
+          <!-- Lecturer (Current MSc) -->
+          <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Lecturer — “Taxation of Individuals”</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Interdepartmental Postgraduate Program (MSc) in Accounting and Auditing</strong><br>
+                Hellenic Mediterranean University
+              </p>
+              <p class="text-sm text-gray-600">October 2023 – Present</p>
+            </div>
+          </div>
+  
+          <!-- Teaching Assistant -->
+          <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+              <h3 class="text-xl font-bold text-navy mb-2">Teaching Assistant — “Auditing II”</h3>
+              <p class="text-gray-600 mb-2">
+                <strong>Postgraduate Program (MSc) in Accounting and Auditing</strong><br>
+                Technological Educational Institute (TEI) of Crete — School of Management and Economics
+              </p>
+              <p class="text-sm text-gray-600">September 2011 – June 2012</p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-navy text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Contact</h2>
-            
-            <div class="md:flex justify-center space-y-8 md:space-y-0 md:space-x-16">
-                <div class="text-center" data-aos="fade-up">
-                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="mail" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Email</h3>
-                    <a href="mailto:i.giannoulis@hmu.gr" class="hover:text-blue-200 transition">i.giannoulis@hmu.gr</a>
-                </div>
-                
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="map-pin" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Institution</h3>
-                    <p>Hellenic Mediterranean University</p>
-                    <p>Department of Accounting & Finance</p>
-                </div>
-                
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-blue-800 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                        <i data-feather="link" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Academic Profiles</h3>
-                    <div class="flex justify-center space-x-4">
-                        <a href="#" class="hover:text-blue-200 transition" aria-label="Google Scholar">
-                            <i data-feather="book" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="hover:text-blue-200 transition" aria-label="ORCID">
-                            <i data-feather="user" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="hover:text-blue-200 transition" aria-label="ResearchGate">
-                            <i data-feather="bar-chart-2" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Administrative Work Section -->
+<section id="administrative-work" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Administrative and Academic Service</h2>
+  
+      <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
+        <ul class="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
+  
+          <li>
+            <strong>Internship Coordinator</strong> — Department of Accounting & Finance,  
+            Hellenic Mediterranean University (<span class="text-gray-600">2023 – Present</span>).
+          </li>
+  
+          <li>
+            <strong>Head of Sector A (Accounting)</strong> — Department of Accounting,  
+            School of Management and Economics (S.D.O.), TEI of Crete (<span class="text-gray-600">2011 – 2013</span>).
+          </li>
+  
+          <li>
+            <strong>Member of Internal Evaluation Committee (OMEA)</strong> —  
+            Department of Accounting, TEI of Crete,  
+            in accordance with Council Act No. 377/15-4-2008.
+          </li>
+  
+          <li>
+            <strong>Member of Selection Committee</strong> for academic positions (Professor of Applications),  
+            Department of Accounting — TEI of Crete, for the following fields:
+            <ul class="list-disc list-inside ml-6 mt-2 text-gray-600 space-y-1">
+              <li>Tax Accounting Applications (Government Gazette No. 1015/6-12-2007)</li>
+              <li>Accounting Applications (Government Gazette No. 238/28-11-2005)</li>
+            </ul>
+          </li>
+  
+          <li>
+            <strong>Member of Electoral Committee</strong> for academic positions (Professor of Applications),  
+            Department of Accounting — TEI of Crete, for the following fields:
+            <ul class="list-disc list-inside ml-6 mt-2 text-gray-600 space-y-1">
+              <li>Tax Accounting Applications (FEK 1015/6-12-2007)</li>
+              <li>Tax Planning Applications (FEK 1015/6-12-2007)</li>
+              <li>Accounting Applications (FEK 798/16-10-2007)</li>
+              <li>Accounting Applications (FEK 238/28-11-2005)</li>
+            </ul>
+          </li>
+  
+          <li>
+            <strong>Erasmus Program Coordinator</strong> —  
+            Department of Accounting, TEI of Crete (<span class="text-gray-600">2013 – 2015</span>).
+          </li>
+  
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="md:flex justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <p class="text-lg font-bold">Dr. Ioannis K. Giannoulis</p>
-                    <p class="text-gray-400">Lecturer in Accounting & Finance</p>
-                </div>
-                <div class="text-gray-400 text-sm">
-                    <p>&copy; 2023 Academic Portfolio. All rights reserved.</p>
-                </div>
+   <!-- Research Section -->
+<section id="research" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="md:flex md:space-x-10">
+        
+        <!-- Research Interests -->
+        <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0" data-aos="fade-right">
+          <h2 class="text-3xl font-bold text-navy mb-6">Research Interests</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+              <span>Corporate Governance Structures</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+              <span>Initial Public Offerings (IPOs)</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+              <span>Financial Market Regulation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+              <span>Accounting Standards Implementation</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+              <span>Emerging Market Economies</span>
+            </li>
+          </ul>
+  
+          <h2 class="text-3xl font-bold text-navy mt-16 mb-6">Recent Conferences</h2>
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-bold text-lg text-navy">European Accounting Association Annual Congress</h3>
+              <p class="text-gray-600 text-sm mb-2">Oslo, Norway | May 2023</p>
+              <p>Presented research on “Board Diversity and Firm Performance in Southern Europe”.</p>
             </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-bold text-lg text-navy">Mediterranean Finance Conference</h3>
+              <p class="text-gray-600 text-sm mb-2">Valletta, Malta | October 2022</p>
+              <p>Keynote speaker on “Regulatory Challenges in Post-Pandemic Financial Markets”.</p>
+            </div>
+          </div>
         </div>
-    </footer>
+  
+        <!-- Publications -->
+        <div class="md:w-1/2" data-aos="fade-left">
+          <h2 class="text-3xl font-bold text-navy mb-6">Selected Publications</h2>
+          <div class="space-y-6">
+  
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-semibold text-lg text-navy mb-1">
+                IPO Determinants of Delisting Risk: Lessons from the Athens Stock Exchange
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Makrominas, M. & Yiannoulis, Y. K.</strong> (2021). <i>Accounting Forum, 45(3)</i>, 307–331.
+              </p>
+              <a href="https://www.tandfonline.com/doi/full/10.1080/01559982.2021.1885253" target="_blank"
+                 class="text-blue-600 hover:underline flex items-center text-sm">
+                <i data-feather="external-link" class="w-4 h-4 mr-1"></i>View Publication
+              </a>
+            </div>
+  
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-semibold text-lg text-navy mb-1">
+                Synopsis of the Accounting Research in Hellas
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Yiannoulis, Y. K.</strong> (2021). <i>Accounting and Finance Research, 10(1)</i>, 75–84.
+              </p>
+              <a href="https://www.sciedupress.com/journal/index.php/afr/article/view/20170" target="_blank"
+                 class="text-blue-600 hover:underline flex items-center text-sm">
+                <i data-feather="external-link" class="w-4 h-4 mr-1"></i>View Publication
+              </a>
+            </div>
+  
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-semibold text-lg text-navy mb-1">
+                Delisting in Athens Stock Exchange
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Yiannoulis, Y. K.</strong> (2019). <i>Journal of Modern Accounting and Auditing, 15(7)</i>, 343–366.
+              </p>
+              <a href="http://www.davidpublisher.com/Public/uploads/Contribute/5d394c1803d09.pdf" target="_blank"
+                 class="text-blue-600 hover:underline flex items-center text-sm">
+                <i data-feather="external-link" class="w-4 h-4 mr-1"></i>View Publication
+              </a>
+            </div>
+  
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-semibold text-lg text-navy mb-1">
+                Literature Review on the Hellenic Auditing and Accounting Environment Before, During and After the Crisis Period
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Yiannoulis, Y. K.</strong> (2019). <i>Universal Journal of Accounting and Finance, 7(2)</i>, 43–49.
+              </p>
+              <p class="text-sm text-gray-500">DOI: 10.13189/ujaf.2019.070202</p>
+              <a href="https://www.hrpub.org/journals/article_info.php?aid=8103" target="_blank"
+                 class="text-blue-600 hover:underline flex items-center text-sm">
+                <i data-feather="external-link" class="w-4 h-4 mr-1"></i>View Publication
+              </a>
+            </div>
+  
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-semibold text-lg text-navy mb-1">
+                Accounting and Corporate Governance Literature Review in Hellas, 1991–2007
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <strong>Yiannoulis, Y. K.</strong> (2019). <i>Journal of Modern Accounting and Auditing, 15(4)</i>, 167–184.
+              </p>
+              <p class="text-sm text-gray-500">DOI: 10.17265/1548-6583/2019.04.001</p>
+              <a href="http://www.davidpublisher.com/index.php/Home/Article/index?id=39671.html" target="_blank"
+                 class="text-blue-600 hover:underline flex items-center text-sm">
+                <i data-feather="external-link" class="w-4 h-4 mr-1"></i>View Publication
+              </a>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="py-16 bg-navy text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contact</h2>
+  
+      <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+        
+        <!-- Email -->
+        <div data-aos="fade-up" class="flex flex-col items-center">
+          <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+            <i data-feather="mail" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">Email</h3>
+          <a href="mailto:yy@hmu.gr" class="text-blue-200 hover:text-white transition">yy@hmu.gr</a>
+        </div>
+  
+        <!-- Divider line -->
+        <div class="hidden md:block h-10 w-px bg-blue-700"></div>
+  
+        <!-- Institution -->
+        <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
+          <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+            <i data-feather="map-pin" class="w-7 h-7"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-1">
+            <a href="https://hmu.gr/en/home/" target="_blank" class="hover:text-blue-200 transition underline">
+              Institution
+            </a>
+          </h3>
+          <p class="text-sm">Hellenic Mediterranean University</p>
+          <p class="text-sm">Department of Accounting & Finance</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+   <!-- Footer -->
+<footer class="bg-gray-900 text-white py-6">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <p class="mb-2 md:mb-0">
+        Designed & Developed by 
+        <a href="https://www.pixelnodestudio.com" target="_blank" class="text-amber-500 hover:underline">
+          Pixel Node Studio
+        </a>
+      </p>
+      <p>&copy; 2025 Dr. Ioannis Giannoulis — Academic Portfolio. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
     <script>
         AOS.init({
@@ -332,5 +613,39 @@
         });
         feather.replace();
     </script>
+    <script>
+        // Highlight active section link on scroll
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll("nav a[href^='#']");
+      
+        function setActiveLink() {
+          let current = "";
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120; // small offset for navbar height
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+              current = section.getAttribute("id");
+            }
+          });
+      
+          navLinks.forEach(link => {
+            link.classList.remove("active-link");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active-link");
+            }
+          });
+        }
+      
+        window.addEventListener("scroll", setActiveLink);
+      
+        // Also handle click instantly
+        navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            navLinks.forEach(l => l.classList.remove("active-link"));
+            link.classList.add("active-link");
+          });
+        });
+      </script>
+
 </body>
 </html>
