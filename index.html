@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Ioannis K. Giannoulis - Academic Portfolio</title>
+    <title>Dr. Ioannis Giannoulis - Academic Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
@@ -78,6 +78,17 @@
           <i data-feather="menu"></i>
         </button>
       </div>
+         <!-- ✅ Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden bg-white border-t border-gray-200">
+    <div class="flex flex-col items-center space-y-4 py-4">
+      <a href="#about" class="text-gray-700 hover:text-navy transition">About</a>
+      <a href="#education" class="text-gray-700 hover:text-navy transition">Education</a>
+      <a href="#teaching" class="text-gray-700 hover:text-navy transition">Undergraduate Teaching</a>
+      <a href="#teaching-postgraduate" class="text-gray-700 hover:text-navy transition">Postgraduate Teaching</a>
+      <a href="#administrative-work" class="text-gray-700 hover:text-navy transition">Administrative Work</a>
+      <a href="#research" class="text-gray-700 hover:text-navy transition">Research</a>
+      <a href="#contact" class="text-gray-700 hover:text-navy transition">Contact</a>
+    </div>
     </div>
   </nav>
   
@@ -545,43 +556,58 @@
     </div>
   </section>
 
-
-  <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-16 bg-navy text-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contact</h2>
-  
-      <div class="flex flex-col md:flex-row justify-center items-center gap-10">
-        
-        <!-- Email -->
-        <div data-aos="fade-up" class="flex flex-col items-center">
-          <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
-            <i data-feather="mail" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-lg font-semibold mb-1">Email</h3>
-          <a href="mailto:yy@hmu.gr" class="text-blue-200 hover:text-white transition">yy@hmu.gr</a>
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contact</h2>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+      
+      <!-- Email -->
+      <div data-aos="fade-up" class="flex flex-col items-center">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+          <i data-feather="mail" class="w-7 h-7"></i>
         </div>
-  
-        <!-- Divider line -->
-        <div class="hidden md:block h-10 w-px bg-blue-700"></div>
-  
-        <!-- Institution -->
-        <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
-          <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
-            <i data-feather="map-pin" class="w-7 h-7"></i>
-          </div>
-          <h3 class="text-lg font-semibold mb-1">
-            <a href="https://hmu.gr/en/home/" target="_blank" class="hover:text-blue-200 transition underline">
-              Institution
-            </a>
-          </h3>
-          <p class="text-sm">Hellenic Mediterranean University</p>
-          <p class="text-sm">Department of Accounting & Finance</p>
-        </div>
-  
+        <h3 class="text-lg font-semibold mb-1">Email</h3>
+        <a href="mailto:yy@hmu.gr" class="text-blue-200 hover:text-white transition">yy@hmu.gr</a>
       </div>
+
+      <!-- Divider line -->
+      <div class="hidden md:block h-10 w-px bg-blue-700"></div>
+
+      <!-- LinkedIn -->
+      <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+          <i data-feather="linkedin" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/yiannis-%CE%BA-yiannoulis-phd-866274227/" target="_blank" 
+           class="text-blue-200 hover:text-white transition">
+          Visit Profile
+        </a>
+      </div>
+
+      <!-- Divider line -->
+      <div class="hidden md:block h-10 w-px bg-blue-700"></div>
+
+      <!-- Institution -->
+      <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+          <i data-feather="map-pin" class="w-7 h-7"></i>
+        </div>
+        <h3 class="text-lg font-semibold mb-1">Institution</h3>
+        <a href="https://hmu.gr/en/home/" target="_blank" 
+           class="text-blue-200 hover:text-white transition text-sm leading-relaxed">
+          Hellenic Mediterranean University<br>
+          Department of Accounting & Finance
+        </a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
    <!-- Footer -->
 <footer class="bg-gray-900 text-white py-6">
