@@ -26,34 +26,157 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        /* Publication cards hover */
         .publication-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
+
+        /* Timeline dots — mobile */
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: -38px;
-            top: 0;
-            width: 16px;
-            height: 16px;
+            left: -34px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: #1a365d;
+            border: 3px solid #ffffff;
+            z-index: 2;
+        }
+
+        /* Timeline dots — desktop: reposition to center line */
+        @media (min-width: 768px) {
+            /* Items on the right side (ml-auto) */
+            .md\:ml-auto .timeline-item:before {
+                left: auto;
+                right: auto;
+                left: -42px;
+                top: 24px;
+            }
+            /* Items on the left side */
+            .md\:w-1\/2:not(.md\:ml-auto) .timeline-item:before {
+                left: auto;
+                right: -42px;
+                top: 24px;
+            }
+        }
+
+        /* Interactive card hover effect */
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Nav link transition */
+        nav a {
+            transition: color 0.2s ease, border-color 0.2s ease;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        /* Active nav link */
+        .active-link {
+            color: #1a365d !important;
+            border-bottom: 2px solid #1a365d;
+            font-weight: 600;
+        }
+
+        /* Section heading underline accent */
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #1a365d;
+            border-radius: 2px;
+            margin: 12px auto 0;
+        }
+
+        /* Section heading on dark bg */
+        .bg-navy .section-heading::after {
+            background: #ffffff;
+        }
+
+        /* Contact icon circles hover */
+        .contact-icon {
+            transition: transform 0.25s ease, background-color 0.25s ease;
+        }
+        .contact-icon:hover {
+            transform: scale(1.1);
+            background-color: #2b6cb0;
+        }
+
+        /* Research interest items */
+        .research-item {
+            transition: transform 0.2s ease;
+        }
+        .research-item:hover {
+            transform: translateX(6px);
+        }
+
+        /* Footer link hover */
+        footer a {
+            transition: color 0.2s ease;
+        }
+
+        /* Subtle section divider */
+        .section-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e0, transparent);
+            margin: 0;
+        }
+
+        /* Hero button hover */
+        .hero-btn {
+            transition: all 0.3s ease;
+        }
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        /* Mobile menu animation */
+        #mobile-menu {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Nav shadow on scroll */
+        nav.scrolled {
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+
+        /* List bullet style for admin section */
+        .admin-list li {
+            position: relative;
+            padding-left: 8px;
+        }
+        .admin-list > li::marker {
+            color: #1a365d;
         }
     </style>
-    <style>
-        .active-link {
-          color: #1a365d !important; /* navy */
-          border-bottom: 2px solid #1a365d;
-          font-weight: 600;
-        }
-      </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
 
   <!-- Navigation -->
-<nav class="bg-white shadow-sm fixed w-full z-10">
+<nav class="bg-white shadow-sm fixed w-full z-10" style="transition: box-shadow 0.3s ease;">
     <div class="flex justify-between items-center h-16 px-6 lg:px-12 max-w-full">
       
       <!-- Left side: Name -->
@@ -74,28 +197,30 @@
   
       <!-- Mobile Menu Button -->
       <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none"
+                aria-label="Toggle navigation menu" aria-expanded="false">
           <i data-feather="menu"></i>
         </button>
       </div>
-         <!-- ✅ Mobile Dropdown Menu -->
-  <div id="mobile-menu" class="hidden bg-white border-t border-gray-200">
-    <div class="flex flex-col items-center space-y-4 py-4">
-      <a href="#about" class="text-gray-700 hover:text-navy transition">About</a>
-      <a href="#education" class="text-gray-700 hover:text-navy transition">Education</a>
-      <a href="#teaching" class="text-gray-700 hover:text-navy transition">Undergraduate Teaching</a>
-      <a href="#teaching-postgraduate" class="text-gray-700 hover:text-navy transition">Postgraduate Teaching</a>
-      <a href="#administrative-work" class="text-gray-700 hover:text-navy transition">Administrative Work</a>
-      <a href="#research" class="text-gray-700 hover:text-navy transition">Research</a>
-      <a href="#contact" class="text-gray-700 hover:text-navy transition">Contact</a>
     </div>
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
+      <div class="flex flex-col items-center space-y-4 py-4">
+        <a href="#about" class="mobile-nav-link text-gray-700 hover:text-navy transition">About</a>
+        <a href="#education" class="mobile-nav-link text-gray-700 hover:text-navy transition">Education</a>
+        <a href="#teaching" class="mobile-nav-link text-gray-700 hover:text-navy transition">Undergraduate Teaching</a>
+        <a href="#teaching-postgraduate" class="mobile-nav-link text-gray-700 hover:text-navy transition">Postgraduate Teaching</a>
+        <a href="#administrative-work" class="mobile-nav-link text-gray-700 hover:text-navy transition">Administrative Work</a>
+        <a href="#research" class="mobile-nav-link text-gray-700 hover:text-navy transition">Research</a>
+        <a href="#contact" class="mobile-nav-link text-gray-700 hover:text-navy transition">Contact</a>
+      </div>
     </div>
   </nav>
   
 
 
 <!-- Hero Section -->
-<header class="pt-20 pb-8 bg-gradient-to-b from-navy via-blue-900 to-blue-800 text-white">
+<header class="pt-24 pb-14 bg-gradient-to-b from-navy via-blue-900 to-blue-800 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
       <!-- Όνομα -->
       <h1 class="text-2xl md:text-3xl font-bold mb-5 tracking-wide">
@@ -112,9 +237,10 @@
       </p>
   
       <!-- Κουμπί -->
-      <a href="https://mail.google.com/mail/u/2?ui=2&ik=0ee89eb4e4&attid=0.1&permmsgid=msg-f:1845590247367315253&th=199cda8d37410f35&view=att&zw&disp=safe"
-         class="inline-block bg-white text-navy px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition">
-         Download CV
+      <a href="mailto:yy@hmu.gr?subject=CV%20Request"
+         class="hero-btn inline-block bg-white text-navy px-8 py-3 rounded-md text-sm font-semibold tracking-wide hover:bg-blue-50"
+         title="Request CV via email">
+         CV Available Upon Request
       </a>
     </div>
   </header>
@@ -125,7 +251,7 @@
    <!-- About Section -->
 <section id="about" class="py-20 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6 lg:px-8" data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-navy mb-8 text-center">About</h2>
+      <h2 class="text-3xl font-bold text-navy mb-10 text-center section-heading">About</h2>
   
       <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
         <p>
@@ -160,22 +286,22 @@
       </div>
   
       <div class="mt-10 grid md:grid-cols-3 gap-6 text-center">
-        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up">
+        <div class="bg-white shadow-sm rounded-lg p-6 card-hover" data-aos="fade-up">
           <i data-feather="book-open" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
-          <h3 class="font-semibold text-navy mb-1">Teaching Focus</h3>
-          <p class="text-sm text-gray-600">Accounting, Taxation & Auditing courses at undergraduate and postgraduate level.</p>
+          <h3 class="font-semibold text-navy mb-2">Teaching Focus</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Accounting, Taxation & Auditing courses at undergraduate and postgraduate level.</p>
         </div>
-  
-        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="bg-white shadow-sm rounded-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
           <i data-feather="briefcase" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
-          <h3 class="font-semibold text-navy mb-1">Administrative Roles</h3>
-          <p class="text-sm text-gray-600">Internship coordinator and member of evaluation and academic service committees.</p>
+          <h3 class="font-semibold text-navy mb-2">Administrative Roles</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Internship coordinator and member of evaluation and academic service committees.</p>
         </div>
-  
-        <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="bg-white shadow-sm rounded-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
           <i data-feather="award" class="w-8 h-8 mx-auto mb-3 text-navy"></i>
-          <h3 class="font-semibold text-navy mb-1">Academic Background</h3>
-          <p class="text-sm text-gray-600">Ph.D. in Business Law — Frederick University, M.A. in Accounting & Finance — Lancaster University.</p>
+          <h3 class="font-semibold text-navy mb-2">Academic Background</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Ph.D. in Business Law — Frederick University, M.A. in Accounting & Finance — Lancaster University.</p>
         </div>
       </div>
     </div>
@@ -184,9 +310,9 @@
 
 
    <!-- Education Section -->
-<section id="education" class="py-20 bg-gray-50">
+<section id="education" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Academic Journey</h2>
+      <h2 class="text-3xl font-bold text-center text-navy mb-16 section-heading" data-aos="fade-up">Academic Journey</h2>
   
       <div class="relative">
         <!-- Timeline -->
@@ -196,7 +322,7 @@
   
           <!-- PhD -->
           <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Ph.D. in Business Law</h3>
               <p class="text-gray-600 mb-2">
                 Frederick University, School of Legal and Business Studies — Cyprus (2016–2023)
@@ -221,7 +347,7 @@
   
           <!-- Master's -->
           <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">M.A. in Accounting and Finance</h3>
               <p class="text-gray-600 mb-2">
                 Lancaster University, Management School — United Kingdom (1996–1997)
@@ -241,7 +367,7 @@
   
           <!-- Bachelor -->
           <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">B.A. in Economics</h3>
               <p class="text-gray-600 mb-2">
                 Athens University of Economics and Business (AUEB) — Greece (1990–1995)
@@ -257,7 +383,7 @@
   
           <!-- Erasmus -->
           <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">
                 Diploma in Investment and Portfolio Theory (Erasmus)
               </h3>
@@ -276,7 +402,7 @@
 <!-- Undergraduate Teaching Section -->
 <section id="teaching" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Undergraduate Teaching Experience</h2>
+      <h2 class="text-3xl font-bold text-center text-navy mb-16 section-heading" data-aos="fade-up">Undergraduate Teaching Experience</h2>
   
       <div class="relative">
         <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
@@ -284,7 +410,7 @@
   
           <!-- Lecturer -->
           <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Lecturer</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Hellenic Mediterranean University (HMU)</strong><br>
@@ -298,7 +424,7 @@
   
           <!-- Lecturer of Applications -->
           <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Lecturer of Applications</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Hellenic Mediterranean University (HMU)</strong><br>
@@ -310,7 +436,7 @@
   
           <!-- Professor of Applications (TEI Crete 2013–2019) -->
           <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Professor of Applications</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Technological Educational Institute (TEI) of Crete</strong><br>
@@ -323,7 +449,7 @@
   
           <!-- Professor of Applications (TEI Crete 2005–2013) -->
           <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Professor of Applications</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Technological Educational Institute (TEI) of Crete</strong><br>
@@ -343,7 +469,7 @@
   <!-- Postgraduate Teaching Section -->
   <section id="teaching-postgraduate" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Postgraduate Teaching Experience</h2>
+      <h2 class="text-3xl font-bold text-center text-navy mb-16 section-heading" data-aos="fade-up">Postgraduate Teaching Experience</h2>
   
       <div class="relative">
         <div class="border-l-2 border-navy absolute h-full left-4 md:left-1/2"></div>
@@ -351,7 +477,7 @@
   
           <!-- Lecturer (Current MSc) -->
           <div class="relative pl-12 md:pl-0 md:w-1/2 md:ml-auto" data-aos="fade-left">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Lecturer — “Taxation of Individuals”</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Interdepartmental Postgraduate Program (MSc) in Accounting and Auditing</strong><br>
@@ -363,7 +489,7 @@
   
           <!-- Teaching Assistant -->
           <div class="relative pl-12 md:w-1/2" data-aos="fade-right">
-            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative">
+            <div class="bg-white p-6 rounded-lg shadow-md timeline-item relative card-hover">
               <h3 class="text-xl font-bold text-navy mb-2">Teaching Assistant — “Auditing II”</h3>
               <p class="text-gray-600 mb-2">
                 <strong>Postgraduate Program (MSc) in Accounting and Auditing</strong><br>
@@ -381,10 +507,10 @@
 <!-- Administrative Work Section -->
 <section id="administrative-work" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center text-navy mb-16" data-aos="fade-up">Administrative and Academic Service</h2>
+      <h2 class="text-3xl font-bold text-center text-navy mb-16 section-heading" data-aos="fade-up">Administrative and Academic Service</h2>
   
       <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
-        <ul class="list-disc list-inside space-y-4 text-gray-700 leading-relaxed">
+        <ul class="admin-list list-disc list-inside space-y-5 text-gray-700 leading-relaxed">
   
           <li>
             <strong>Internship Coordinator</strong> — Department of Accounting & Finance,  
@@ -441,39 +567,39 @@
         <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0" data-aos="fade-right">
           <h2 class="text-3xl font-bold text-navy mb-6">Research Interests</h2>
           <ul class="space-y-4">
-            <li class="flex items-start">
-              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+            <li class="flex items-start research-item">
+              <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
               <span>Corporate Governance Structures</span>
             </li>
-            <li class="flex items-start">
-              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+            <li class="flex items-start research-item">
+              <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
               <span>Initial Public Offerings (IPOs)</span>
             </li>
-            <li class="flex items-start">
-              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+            <li class="flex items-start research-item">
+              <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
               <span>Financial Market Regulation</span>
             </li>
-            <li class="flex items-start">
-              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+            <li class="flex items-start research-item">
+              <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
               <span>Accounting Standards Implementation</span>
             </li>
-            <li class="flex items-start">
-              <i data-feather="check-circle" class="text-green-500 mr-2 mt-1"></i>
+            <li class="flex items-start research-item">
+              <i data-feather="check-circle" class="text-green-500 mr-3 mt-1 flex-shrink-0"></i>
               <span>Emerging Market Economies</span>
             </li>
           </ul>
   
           <h2 class="text-3xl font-bold text-navy mt-16 mb-6">Recent Conferences</h2>
           <div class="space-y-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-              <h3 class="font-bold text-lg text-navy">European Accounting Association Annual Congress</h3>
-              <p class="text-gray-600 text-sm mb-2">Oslo, Norway | May 2023</p>
-              <p>Presented research on “Board Diversity and Firm Performance in Southern Europe”.</p>
+            <div class=”bg-white p-6 rounded-lg shadow-sm card-hover”>
+              <h3 class=”font-bold text-lg text-navy mb-1”>European Accounting Association Annual Congress</h3>
+              <p class=”text-gray-600 text-sm mb-2”>Oslo, Norway | May 2023</p>
+              <p class=”text-gray-700 text-sm leading-relaxed”>Presented research on “Board Diversity and Firm Performance in Southern Europe”.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-              <h3 class="font-bold text-lg text-navy">Mediterranean Finance Conference</h3>
-              <p class="text-gray-600 text-sm mb-2">Valletta, Malta | October 2022</p>
-              <p>Keynote speaker on “Regulatory Challenges in Post-Pandemic Financial Markets”.</p>
+            <div class=”bg-white p-6 rounded-lg shadow-sm card-hover”>
+              <h3 class=”font-bold text-lg text-navy mb-1”>Mediterranean Finance Conference</h3>
+              <p class=”text-gray-600 text-sm mb-2”>Valletta, Malta | October 2022</p>
+              <p class=”text-gray-700 text-sm leading-relaxed”>Keynote speaker on “Regulatory Challenges in Post-Pandemic Financial Markets”.</p>
             </div>
           </div>
         </div>
@@ -483,7 +609,7 @@
           <h2 class="text-3xl font-bold text-navy mb-6">Selected Publications</h2>
           <div class="space-y-6">
   
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
               <h3 class="font-semibold text-lg text-navy mb-1">
                 IPO Determinants of Delisting Risk: Lessons from the Athens Stock Exchange
               </h3>
@@ -496,7 +622,7 @@
               </a>
             </div>
   
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
               <h3 class="font-semibold text-lg text-navy mb-1">
                 Synopsis of the Accounting Research in Hellas
               </h3>
@@ -509,7 +635,7 @@
               </a>
             </div>
   
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
               <h3 class="font-semibold text-lg text-navy mb-1">
                 Delisting in Athens Stock Exchange
               </h3>
@@ -522,7 +648,7 @@
               </a>
             </div>
   
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
               <h3 class="font-semibold text-lg text-navy mb-1">
                 Literature Review on the Hellenic Auditing and Accounting Environment Before, During and After the Crisis Period
               </h3>
@@ -536,7 +662,7 @@
               </a>
             </div>
   
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
               <h3 class="font-semibold text-lg text-navy mb-1">
                 Accounting and Corporate Governance Literature Review in Hellas, 1991–2007
               </h3>
@@ -559,13 +685,13 @@
 <!-- Contact Section -->
 <section id="contact" class="py-16 bg-navy text-white">
   <div class="max-w-4xl mx-auto px-4 text-center">
-    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contact</h2>
+    <h2 class="text-3xl font-bold mb-10 section-heading" data-aos="fade-up">Contact</h2>
 
     <div class="flex flex-col md:flex-row justify-center items-center gap-10">
       
       <!-- Email -->
       <div data-aos="fade-up" class="flex flex-col items-center">
-        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3 contact-icon cursor-pointer">
           <i data-feather="mail" class="w-7 h-7"></i>
         </div>
         <h3 class="text-lg font-semibold mb-1">Email</h3>
@@ -577,7 +703,7 @@
 
       <!-- LinkedIn -->
       <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center">
-        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3 contact-icon cursor-pointer">
           <i data-feather="linkedin" class="w-7 h-7"></i>
         </div>
         <h3 class="text-lg font-semibold mb-1">LinkedIn</h3>
@@ -592,7 +718,7 @@
 
       <!-- Institution -->
       <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center">
-        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3">
+        <div class="bg-blue-800 rounded-full w-14 h-14 flex items-center justify-center mb-3 contact-icon cursor-pointer">
           <i data-feather="map-pin" class="w-7 h-7"></i>
         </div>
         <h3 class="text-lg font-semibold mb-1">Institution</h3>
@@ -610,9 +736,9 @@
 
 
    <!-- Footer -->
-<footer class="bg-gray-900 text-white py-6">
+<footer class="bg-gray-900 text-white py-8">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
       <p class="mb-2 md:mb-0">
         Designed & Developed by 
         <a href="https://www.pixelnodestudio.com" target="_blank" class="text-amber-500 hover:underline">
@@ -625,9 +751,21 @@
 </footer>
 
 <script>
-    document.getElementById('mobile-menu-button').addEventListener('click', function() {
-      const menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden');
+    // Mobile menu toggle with aria-expanded
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.setAttribute('aria-expanded', !isHidden);
+    });
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+      });
     });
   </script>
 
@@ -663,6 +801,16 @@
         }
       
         window.addEventListener("scroll", setActiveLink);
+
+        // Nav shadow on scroll
+        const nav = document.querySelector("nav");
+        window.addEventListener("scroll", function() {
+          if (window.scrollY > 10) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
+        });
       
         // Also handle click instantly
         navLinks.forEach(link => {
